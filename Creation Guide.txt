@@ -1,0 +1,32 @@
+How to generate and save a QR code in oracle database but do remember this is only for
+12c and above for this purpose we need java resources and some packages(to create) in the database these packages are in wrapped form.
+We also need to create a database directory in database to store QR image on that directory.
+
+:: Step 1
+
+Create Directory in the database
+
+:: Step 2
+
+Create Package in the database
+i) QR_CODE_GEN_PKG.pks or can use another name
+ii) QR_CODE_GEN_PKG.pkb   can use another name
+
+:: Step 3
+
+Create java source or can also say compiled java source
+i)  01 - bmp2jpg-java.sql
+
+:: Step 4
+
+Create a function in database
+i)  02 - plsql-function.sql
+
+We are all set and ready to get QR Code image
+let's do it
+
+Call function with following example.sql code
+check directory which u create at the first step.
+
+Verify QR Code image from the following website link or other then.
+https://www.imgonline.com.ua/eng/scan-qr-bar-code.php
