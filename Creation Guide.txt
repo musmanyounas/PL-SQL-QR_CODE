@@ -20,7 +20,12 @@ i)  01 - bmp2jpg-java.sql
 :: Step 4
 
 Create a function in database
-i)  02 - plsql-function.sql
+i)  plsql-function.sql
+
+:: Step 5
+
+Create a Procedure in database
+i)  generate_and_save_qr_image
 
 We are all set and ready to get QR Code image
 let's do it
