@@ -1,0 +1,27 @@
+CREATE OR REPLACE PROCEDURE generate_and_save_qr_image(
+    p_data IN VARCHAR2,
+    p_image_name IN VARCHAR2
+) AS
+    lbQR BLOB;
+    v_directory VARCHAR2(100) := 'QR_DIR';
+BEGIN
+    
+    lbQR := f_bmp2jpg(
+        ZT_QR.F_QR_AS_BMP(
+            p_data => p_data,
+            p_error_correction => 'M'
+        )
+    );
+
+    ZT_QR.p_save_file(lbQR, p_image_name, v_directory);
+
+    DBMS_OUTPUT.PUT_LINE('Image saved successfully with name: ' || p_image_name);
+END generate_and_save_qr_image;
+
+
+-------------call procedure
+
+BEGIN
+    generate_and_save_qr_image('QR Image Text Here...', 'Qr_Code1.jpg');
+END;
+
